@@ -12,7 +12,6 @@ form.addEventListener("submit", function(e) {
     text1.value = "";
     text2.value = "";
     url.value = "";
-        
 });
 
 function makeMeme(text1,text2,url) {
@@ -30,6 +29,10 @@ function makeMeme(text1,text2,url) {
     meme.appendChild(topText);
     meme.appendChild(bottomText);
     meme.appendChild(img);
+    // const deleteSign = document.createElement("div");
+    // deleteSign.classList.add(deleteSign);
+    // deleteSign.innerText = "X";
+    // meme.appendChild(deleteSign);
     return meme;
 
 }
