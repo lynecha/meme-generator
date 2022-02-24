@@ -11,25 +11,31 @@
 </head>
 
 <body>
+    <header>
+        <div class="container">
+            <h1>Meme Generator</h1>
+            <h3>Fill out the form to create memes!</h3>
+        </div>
+    </header>
     <section>
         <form action="" id="memeform"> 
         <p>
             <label for="">Image URL:
-                <input type="url" name="url" placeholder="what is the url for the image?">
+                <input type="url" name="url" id="link" placeholder="what is the url for the image?">
             </label>
             
         </p>
         <p>
             <label for="">Text on Top:
-                <input type="text" name="toptext" placeholder="what is the text on top?">
+                <input type="text" name="toptext" id="top" placeholder="what is the text on top?">
             </label>
         </p>    
         <P>
             <label for="">Text on Bottom:
-                <input type="text" name="bottomtext" placeholder="what is the text on Bottom?">
+                <input type="text" name="bottomtext" id="bottom" placeholder="what is the text on Bottom?">
             </label>        
         </P>
-            <input type="submit">
+            <button type="submit">Add Meme</button>
         </form>
     </section>
 

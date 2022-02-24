@@ -29,10 +29,20 @@ function makeMeme(text1,text2,url) {
     meme.appendChild(topText);
     meme.appendChild(bottomText);
     meme.appendChild(img);
-    // const deleteSign = document.createElement("div");
-    // deleteSign.classList.add(deleteSign);
-    // deleteSign.innerText = "X";
-    // meme.appendChild(deleteSign);
+    const deleteSign = document.createElement("BUTTON");
+    deleteSign.classList.add("delete");
+    deleteSign.innerHTML = "&#x2716;";
+    meme.appendChild(deleteSign);
     return meme;
-
 }
+results.addEventListener("click" , function(e) {
+    if (e.target.tagName === "BUTTON") {
+        e.target.parentElement.remove();
+    }
+});
+
+results.addEventListener("mouseover",function(e) {
+    if (e.target.tagName === "IMG") {
+    }
+});
+
