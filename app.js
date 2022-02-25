@@ -46,6 +46,10 @@ function makeMeme(text1,text2,url) {
         deleteSign.style.opacity = ".5";
     });
 
+    deleteSign.addEventListener("mouseover", function(e) {
+        img.style.filter = "brightness(60%)";
+    });
+
     meme.addEventListener("mouseout", function(e) {
         deleteSign.style.opacity = "0";
     });
