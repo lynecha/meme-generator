@@ -6,6 +6,9 @@ const results = document.querySelector("#results");
 
 
 form.addEventListener("submit", function(e) {
+    if (url.value == "") {
+        return false;
+    }
     e.preventDefault();
     const newMeme = makeMeme(text1,text2,url);
     results.appendChild(newMeme);
@@ -25,24 +28,30 @@ function makeMeme(text1,text2,url) {
     topText.innerText = text1.value;
     bottomText.innerText = text2.value;  
     meme.appendChild(img);
-    meme.classList.add("meme");
     meme.appendChild(topText);
     meme.appendChild(bottomText);
     meme.appendChild(img);
     const deleteSign = document.createElement("BUTTON");
     deleteSign.classList.add("delete");
     deleteSign.innerHTML = "&#x2716;";
+    // deleteSign.setAttribute("id", "deleteSign");
     meme.appendChild(deleteSign);
+    meme.classList.add("meme");
     return meme;
 }
+
 results.addEventListener("click" , function(e) {
-    if (e.target.tagName === "BUTTON") {
+    console.log(e.target.className);
+    if (e.target.tagName === "IMG" || e.target.className === "delete") {     
         e.target.parentElement.remove();
     }
 });
 
 results.addEventListener("mouseover",function(e) {
-    if (e.target.tagName === "IMG") {
+    if (e.target.tagName === "IMG" || e.target.className === "delete") {
     }
 });
+results.addEventListener("mouseout", function(e) {
+});
+
 
