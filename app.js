@@ -3,7 +3,7 @@ const text1 = document.querySelector("input[name='toptext']");
 const text2 = document.querySelector("input[name='bottomtext']");
 const url = document.querySelector("input[name='url']");
 const results = document.querySelector("#results");
-
+let count = 0;
 
 form.addEventListener("submit", function(e) {
     if (url.value == "") {
@@ -34,24 +34,21 @@ function makeMeme(text1,text2,url) {
     const deleteSign = document.createElement("BUTTON");
     deleteSign.classList.add("delete");
     deleteSign.innerHTML = "&#x2716;";
-    // deleteSign.setAttribute("id", "deleteSign");
     meme.appendChild(deleteSign);
     meme.classList.add("meme");
+    count++;
+
+    meme.addEventListener("click", function(e) {  
+        meme.remove();
+    });
+
+    meme.addEventListener("mouseover", function(e) {
+        deleteSign.style.opacity = ".5";
+    });
+
+    meme.addEventListener("mouseout", function(e) {
+        deleteSign.style.opacity = "0";
+    });
+
     return meme;
 }
-
-results.addEventListener("click" , function(e) {
-    console.log(e.target.className);
-    if (e.target.tagName === "IMG" || e.target.className === "delete") {     
-        e.target.parentElement.remove();
-    }
-});
-
-results.addEventListener("mouseover",function(e) {
-    if (e.target.tagName === "IMG" || e.target.className === "delete") {
-    }
-});
-results.addEventListener("mouseout", function(e) {
-});
-
-
